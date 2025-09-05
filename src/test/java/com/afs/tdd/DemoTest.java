@@ -63,12 +63,13 @@ class DemoTest {
         assertLocationEquals(expectedLocation, currentLocation);
     }
 
+    // Turn right
     @Test
-    void should_face_W_when_turnLeft_given_S() {
+    void should_face_W_when_turnRight_given_S() {
         // Given
         Location location = new Location(Direction.S);
         // When
-        String command = "L";
+        String command = "R";
         // Expect
         Location expectedLocation = new Location(0,0,Direction.W);
         MarsRover marsRover = new MarsRover(location);
@@ -92,11 +93,11 @@ class DemoTest {
     @Test
     void should_face_E_when_turnRight_given_N() {
         // Given
-        Location location = new Location(Direction.E);
+        Location location = new Location(Direction.N);
         // When
         String command = "R";
         // Expect
-        Location expectedLocation = new Location(0,0,Direction.W);
+        Location expectedLocation = new Location(0,0,Direction.E);
         MarsRover marsRover = new MarsRover(location);
         Location currentLocation = marsRover.ExecuteBatchCommand(command);
         assertLocationEquals(expectedLocation, currentLocation);
