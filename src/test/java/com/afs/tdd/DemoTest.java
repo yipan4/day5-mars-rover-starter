@@ -22,4 +22,43 @@ class DemoTest {
         Location currentLocation = marsRover.ExecuteBatchCommand(command);
         assertLocationEquals(expectedLocation, currentLocation);
     }
+
+    @Test
+    void should_face_W_when_turnLeft_given_N() {
+        // Given
+        Location location = new Location(Direction.N);
+        // When
+        String command = "L";
+        // Expect
+        Location expectedLocation = new Location(0,0,Direction.W);
+        MarsRover marsRover = new MarsRover(location);
+        Location currentLocation = marsRover.ExecuteBatchCommand(command);
+        assertLocationEquals(expectedLocation, currentLocation);
+    }
+
+    @Test
+    void should_face_S_when_turnLeft_given_W() {
+        // Given
+        Location location = new Location(Direction.W);
+        // When
+        String command = "L";
+        // Expect
+        Location expectedLocation = new Location(0,0,Direction.S);
+        MarsRover marsRover = new MarsRover(location);
+        Location currentLocation = marsRover.ExecuteBatchCommand(command);
+        assertLocationEquals(expectedLocation, currentLocation);
+    }
+
+    @Test
+    void should_face_E_when_turnLeft_given_S() {
+        // Given
+        Location location = new Location(Direction.S);
+        // When
+        String command = "L";
+        // Expect
+        Location expectedLocation = new Location(0,0,Direction.E);
+        MarsRover marsRover = new MarsRover(location);
+        Location currentLocation = marsRover.ExecuteBatchCommand(command);
+        assertLocationEquals(expectedLocation, currentLocation);
+    }
 }
