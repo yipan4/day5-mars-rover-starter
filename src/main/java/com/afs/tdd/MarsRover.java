@@ -14,7 +14,25 @@ public class MarsRover {
     }
 
     private void move() {
-
+        Direction direction = this.location.getDirection();
+        switch (direction) {
+            case N: {
+                this.location.setLocationY(location.getLocationY()+1);
+                break;
+            }
+            case W: {
+                this.location.setLocationX(location.getLocationX()-1);
+                break;
+            }
+            case S: {
+                this.location.setLocationY(location.getLocationY()-1);
+                break;
+            }
+            case E: {
+                this.location.setLocationX(location.getLocationX()+1);
+                break;
+            }
+        }
     }
 
     private void turnLeft() {
