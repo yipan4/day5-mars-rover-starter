@@ -13,23 +13,24 @@ public class MarsRover {
         this.location = location;
     }
 
-    private void move() {
+    private void move(int moveDirection) {
+        // moveDirection 1 => move forward, -1 => move backward
         Direction direction = this.location.getDirection();
         switch (direction) {
             case N: {
-                this.location.setLocationY(location.getLocationY()+1);
+                this.location.setLocationY(location.getLocationY()+moveDirection);
                 break;
             }
             case W: {
-                this.location.setLocationX(location.getLocationX()-1);
+                this.location.setLocationX(location.getLocationX()-moveDirection);
                 break;
             }
             case S: {
-                this.location.setLocationY(location.getLocationY()-1);
+                this.location.setLocationY(location.getLocationY()-moveDirection);
                 break;
             }
             case E: {
-                this.location.setLocationX(location.getLocationX()+1);
+                this.location.setLocationX(location.getLocationX()+moveDirection);
                 break;
             }
         }
@@ -82,7 +83,8 @@ public class MarsRover {
     private void executeSingleCommand(String command) {
         switch (command) {
             case "M": {
-                move();
+                int moveDirection = 1;
+                move(moveDirection);
                 break;
             }
             case "L": {
@@ -91,6 +93,11 @@ public class MarsRover {
             }
             case "R": {
                 turnRight();
+                break;
+            }
+            case "B": {
+                int moveDirection = -1;
+                move(moveDirection);
                 break;
             }
         }

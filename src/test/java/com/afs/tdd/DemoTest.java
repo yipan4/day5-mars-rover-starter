@@ -175,7 +175,7 @@ class DemoTest {
         // Given
         Location location = new Location(Direction.N);
         // When
-        String command = "M";
+        String command = "B";
         // Expect
         Location expectedLocation = new Location(0,-1,Direction.N);
         MarsRover marsRover = new MarsRover(location);
@@ -188,7 +188,7 @@ class DemoTest {
         // Given
         Location location = new Location(Direction.E);
         // When
-        String command = "M";
+        String command = "B";
         // Expect
         Location expectedLocation = new Location(-1,0,Direction.E);
         MarsRover marsRover = new MarsRover(location);
@@ -201,7 +201,7 @@ class DemoTest {
         // Given
         Location location = new Location(Direction.S);
         // When
-        String command = "M";
+        String command = "B";
         // Expect
         Location expectedLocation = new Location(0,1,Direction.S);
         MarsRover marsRover = new MarsRover(location);
@@ -214,7 +214,7 @@ class DemoTest {
         // Given
         Location location = new Location(Direction.W);
         // When
-        String command = "M";
+        String command = "B";
         // Expect
         Location expectedLocation = new Location(1,0,Direction.W);
         MarsRover marsRover = new MarsRover(location);
