@@ -221,4 +221,31 @@ class DemoTest {
         Location currentLocation = marsRover.ExecuteBatchCommand(command);
         assertLocationEquals(expectedLocation, currentLocation);
     }
+
+    // Batch command
+    @Test
+    void should_at_2_3_E_when_taking_batch_command_MMMRMM_given_0_0_N() {
+        // Given
+        Location location = new Location();
+        // When
+        String commands = "MMMRMM";
+        // Expect
+        Location expectedLocation = new Location(2,3,Direction.E);
+        MarsRover marsRover = new MarsRover(location);
+        Location currentLocation = marsRover.ExecuteBatchCommand(commands);
+        assertLocationEquals(expectedLocation, currentLocation);
+    }
+
+    @Test
+    void should_at_0_0_S_when_taking_batch_command_MRMRMRMMBL_given_0_0_N() {
+        // Given
+        Location location = new Location();
+        // When
+        String commands = "MRMRMRMMBL";
+        // Expect
+        Location expectedLocation = new Location(0,0,Direction.S);
+        MarsRover marsRover = new MarsRover(location);
+        Location currentLocation = marsRover.ExecuteBatchCommand(commands);
+        assertLocationEquals(expectedLocation, currentLocation);
+    }
 }
