@@ -104,7 +104,7 @@ public class MarsRover {
     }
 
     public Location ExecuteBatchCommand(String commands) {
-        Arrays.asList(commands.split("")).forEach(this::executeSingleCommand);
+        Arrays.stream(commands.split("")).forEach(this::executeSingleCommand);
         return this.location;
     }
 }
